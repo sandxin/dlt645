@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="http://121.36.105.190:31808/equipment-ci/favicon.ico">
+    <script src="./index.js"></script>
+    <title>中建三局智慧工地事业部</title>
+    <style>
+      .area {
+        width: 500px;
+        height: 100px;
+        display: block;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      }
+      .area:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 25%);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>DLT645协议解析</h2>
+    <div class="contianer">
+      <textarea
+        class="area"
+        rows="3"
+        oninput="handle(event.target.value)"
+      ></textarea>
+      <pre id="desc"></pre>
+    </div>
+  </body>
+  <script>
+
+
+function handle(val) {
+  const res = DLT645(val);
+  console.log(res);
+  if (res.errMsg) {
+    document.querySelector('#desc').textContent = res.errMsg;
+    return;
+  }
+  document.querySelector('#desc').textContent = `
+数据帧：${res.data.join('')}
+表号：${res.no}
+数据长度：${res.len}
+校验：${res.valid ? '' : '不'}通过
+帧类型：${res.type}
+返回项：${res.res_desc}
+${res.res_desc}：${res.res_val}
+完整：${res.fulfill ? '是' : '否'}
+`;
+}
+  </script>
+</html>

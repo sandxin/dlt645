@@ -1,0 +1,23 @@
+{
+  "name": "dlt645",
+  "version": "1.0.0",
+  "description": "dlt645响应解析",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandxin/dlt645.git"
+  },
+  "keywords": [
+    "dlt645",
+    "DLT/645"
+  ],
+  "author": "sandxin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandxin/dlt645/issues"
+  },
+  "homepage": "https://github.com/sandxin/dlt645#readme"
+}
