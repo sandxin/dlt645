@@ -1,6 +1,6 @@
 {
   "name": "dlt645",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dlt645响应解析",
   "main": "index.js",
   "scripts": {

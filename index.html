@@ -39,13 +39,13 @@
         class="area"
         rows="3"
         oninput="handle(event.target.value)"
-      ></textarea>
+      >68 60 64 02 09 22 04 68 91 0a 33 32 34 35 47 56 33 33 33 33 97 16</textarea>
       <pre id="desc"></pre>
     </div>
   </body>
   <script>
 
-
+handle(document.querySelector('.area').value)
 function handle(val) {
   const res = DLT645(val);
   console.log(res);
